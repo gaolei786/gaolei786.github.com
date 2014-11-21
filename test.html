@@ -1,0 +1,254 @@
+
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>setup VPN (Virtual Private Network) connection in Ubuntu 12.04/12.10</title>
+
+<link rel="alternate" type="application/rss+xml" title="Sudobits Blog | Open Source RSS Feed" href="http://feeds.feedburner.com/sudobits">
+<link rel='stylesheet' id='pretty-photo-css'  href='./media/demi/css/prettyPhoto-3.4.2.css' type='text/css' media='all' />
+<script type='text/javascript' src='./media/js/jquery-1.7.2.js'></script>
+<script src="./media/js/prettify.js" type="text/javascript"></script>
+        <script src="./media/js/jquery.tagcloud.js" type="text/javascript"></script>
+        <script src="./media/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+
+    </head>
+
+    <body >
+
+        <div id="wrapper">
+            <!-- /header -->
+<div id="header">
+
+  <div id="logo">
+    <h1 id="logo">
+      <a href="/" title="[Go to homepage]"><img width="234px" height="86px" src="/media/demi/img/demi-logo.jpg" alt="" /></a>
+    </h1> 
+  </div><!-- /logo -->
+
+  <div class="cleared"></div>
+</div>
+<!-- /header -->
+
+ 
+            <!-- Tray -->
+<div id="tray">
+    <ul>
+        
+        <li ><a href="/">Home</a></li>
+        <li ><a href="/archives/">文章列表</a></li>
+        <li id="tray-active"><a href="/practice/">研发实践</a></li>
+        <li ><a href="/chihuo/">熊猫吃货</a></li>
+        <li ><a href="/life/">微生活</a></li>
+        <li ><a href="/tags/">标签</a></li>
+        <li ><a href="/about/">关于我</a></li>
+        
+        <li>
+        <div id="search">
+            <form action="http://www.google.com/cse" class="lit-search" method="get" target="_blank">
+                <input type="text" class="text" name="q" size="24" placeholder="搜索">
+                <input type="hidden" name="cx" value="007512494910388222978:uvgripsnamg">
+                <input type="hidden" name="ie" value="UTF-8">
+            </form>
+        </div>
+
+        </li>
+
+    </ul>
+    <hr class="noscreen" />                    
+</div> 
+<!-- /tray -->
+
+
+            <div id="main">
+                <div id="content">
+  <div class="post type-post status-publish format-standard hentry category-1 post" >
+    <div class="posttop">
+      <h1 class="posttitle">
+        2012年Firefox TOP10 附加组件
+      </h1>
+    </div>
+    <div class="postmetatop">
+      Posted 
+      <time class="text" datetime="2013-01-28">2013-01-28 08:30:00</time>&nbsp; |&nbsp;
+       <span class="ds-thread-count" data-thread-key="20130128083000" data-replace="1">暂无评论</span></a></span> &nbsp;|&nbsp;
+      
+      By 熊猫人
+      
+      
+      <div class="tag">
+        
+        <a href="/tags/#Firefox" class="text" title="Firefox" rel="category tag">Firefox</a>&nbsp;
+        
+        <a href="/tags/#浏览器" class="text" title="浏览器" rel="category tag">浏览器</a>&nbsp;
+        
+        <a href="/tags/#Firefox附件组件" class="text" title="Firefox附件组件" rel="category tag">Firefox附件组件</a>&nbsp;
+        
+      </div>
+      
+    </div>
+
+    <div class="postcontent-entry">
+      <div class="cleared"></div>
+      <p>　　Mozilla Firefox浏览器默认情况下，有一些很酷的开发工具（暂存，样式编辑器，调试器，响应“设计”视图，检查（3D view），更多），但你可以进一步扩展他们一些伟大的add-ons/extensions这里列出的。</p>
+
+<h3>TOP 1 Firebug</h3>
+
+<p>Firebug中有很多有用的功能（编辑，调试，监控在现场模式下，你的代码），使Web开发更简单。这是一个Web开发人员必须的组件。
+<a href="./media/pub/web/firebug.gif" rel="prettyPhoto[20130128]" title="This is the description">
+<img src="./media/pub/web/firebug.gif" width="330" alt="This is the title" />
+</a>
+<a href="./media/pub/web/firebug.gif" rel="prettyPhoto[20130128]" alt="firebug" >
+<img src="./media/pub/web/firebug.gif" width="330px"  alt="firebug" class="img-center" />
+</a>
+<!--
+<a href="http://blog.sudobits.com/wp-content/uploads/2012/04/xfce4-screenshot.png" rel="prettyPhoto[8543]"><img class="aligncenter size-large wp-image-6966" title="Xfce Desktop" src="http://blog.sudobits.com/wp-content/uploads/2012/04/xfce4-screenshot-550x343.png" alt="Xfce Desktop" width="550" height="343" /></a>
+<a href="http://blog.sudobits.com/wp-content/uploads/2012/04/xfce4-screenshot.png" rel="prettyPhoto[8543]"><img class="aligncenter size-large wp-image-6966" title="Xfce Desktop" src="http://blog.sudobits.com/wp-content/uploads/2012/04/xfce4-screenshot-550x343.png" alt="Xfce Desktop" width="550" height="343" /></a>
+-->
+</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/" alt="Download Firebug" target="_bank">Download Firebug</a></p>
+
+<h3>TOP 2 Rainbow Color Tools</h3>
+
+<p>它提供了一系列的Web开发工具的颜色 - 易于使用拾色器，颜色库，检查员，分析仪（分析一个网站的配色方案）等。
+<a href="http://demi-panda.com/media/pub/web/Color-Tools.png" alt="Color-Tools" rel="prettyPhoto[20130128]">
+<img src="http://demi-panda.com/media/pub/web/Color-Tools.png" width="330px"  alt="Color-Tools" class="img-center" />
+</a></p>
+
+<p><a href="" alt="Download Rainbow Color Tools" target="_bank">
+Download Rainbow Color Tools</a></p>
+
+<h3>TOP 3 Wappalyzer</h3>
+
+<p>它会告诉你使用的软件（库，框架，服务器等）的网站。</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/" alt="Wappalyzer" target="_bank">Download Wappalyzer</a></p>
+
+<h3>TOP 4 ShowIP</h3>
+
+<p>在状态栏中显示的网站的IP地址，另外，您还可以查询域名注册，主机名，Netcraft公司等。</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/showip/" alt="ShowIP" target="_bank">Download ShowIP</a></p>
+
+<h3>TOP 5 fontinfo</h3>
+
+<p>这是很好的探索在网站上使用的字体（面板的字体或在右键菜单显示字体部分）</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/fontinfo/" alt="Download fontinfo" target="_bank">Download fontinfo</a></p>
+
+<h3>TOP 6 Web Developer</h3>
+
+<p>add some cool web development tools.</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer/" alt="Web Developer" target="_bank" >Download Web Developer</a></p>
+
+<h3>TOP 7 User Agent Switcher</h3>
+
+<p>使用这个扩展，你可以很容易地切换浏览器的用户代理。</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/" alt="Download User Agent Switcher" target="_bank" >Download User Agent Switcher</a></p>
+
+<h3>TOP 8  Greasmonkey</h3>
+
+<p>自定义的网页（它的行为或显示内容），使用少量的JavaScript脚本。用户脚本的管理组件。</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/" target="_bank" alt="Download Greasmonkey">Download Greasmonkey</a></p>
+
+<h3>TOP 9 Modify Headers</h3>
+
+<p>修改发送到服务器的HTTP请求头。</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/modify-headers/" alt="Download Modify Headers" target="_bank">Download Modify Headers</a></p>
+
+<h3>TOP 10 FireFTP</h3>
+
+<p>It’s a cross-platform FTP/SFTP client for Mozilla Firefox.</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/fireftp/" alt="Download FireFTP" target="_bank">Download FireFTP</a></p>
+
+    </div><!-- /postcontent -->
+
+    <div class="v-pagination">
+      
+      
+      <a class="prev" href="/2013/01/28/ubunut-setup-vpn-connection" title="前一篇：Ubuntu/Linux 配置VPN连接">&laquo; Ubuntu/Linux 配置VPN连接</a>
+      
+      
+      
+    </div>
+    
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style" style="margin: 10px 10px 20px 0;padding: 10px 0 0;">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_qzone">QQ空间</a>
+      <a class="jiathis_button_tsina">新浪微博</a>
+      <a class="jiathis_button_tqq">腾讯微博</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_googleplus">Google+</a>
+      <a href="http://www.jiathis.com/share?uid=1706288" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript">
+      var jiathis_config = {data_track_clickback:true};
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1343704647947962" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+ </div><!-- /post -->
+  <div class="cleared"></div>
+ 
+  <div class="archivesbox">
+    <b>版权声明：</b>自由转载-非商用-非衍生-保持署名 | <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a><br>
+    <b>原文网址：</b><a href="/2013/01/28/2012-firefox-top10-add-ons">http://demi-panda.com/2013/01/28/2012-firefox-top10-add-ons</a>
+  </div>
+
+  <div class="archivesbox">
+    <div class="comments">
+      <!-- Duoshuo Comment Begin -->
+      <div class="ds-thread" data-thread-id="20130128083000" data-url="http://demi-panda.com/2013/01/28/2012-firefox-top10-add-ons" data-thread-key="20130128083000" data-title="2012年Firefox TOP10 附加组件"
+        data-order="desc" data-form-positon="top"></div>
+      <!-- Duoshuo Comment End -->
+    </div>
+  </div>
+</div><!-- /content -->
+
+
+
+
+  
+            </div> 
+        </div> <!-- wrapper -->
+        
+        <!-- scroll.html -->
+        <div id="full" style="display:none;width:50px; height:95px; position:fixed; left:50%; top:480px; margin-left:425px;  z-index:100; text-align:center; cursor:pointer;">
+    <a><img src="http://demi-panda.com/media/demi/img/back-top.png" border=0 alt="返回顶部" title="返回顶部"></a>
+</div>
+<script type="text/javascript">
+    var isie6 = window.XMLHttpRequest ? false : true; function newtoponload() { var c = document.getElementById("full"); function b() { var a = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (a > 0) { if (isie6) { c.style.display = "none"; clearTimeout(window.show); window.show = setTimeout(function () { var d = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop; if (d > 0) { c.style.display = "block"; c.style.top = (480 + d) + "px" } }, 400) } else { c.style.display = "block" } } else { c.style.display = "none" } } if (isie6) { c.style.position = "absolute" } window.onscroll = b; b() } if (window.attachEvent) { window.attachEvent("onload", newtoponload) } else { window.addEventListener("load", newtoponload, false) } document.getElementById("full").onclick = function () { window.scrollTo(0, 0) };
+</script>
+
+
+
+
+       
+        <!-- footer -->
+        <footer>
+<div id="footer">                                          
+  <p class="t-center" style='font-size: 10pt;'>
+  &copy; 2012 <a href="/">Demi Panda Lab</a>, All Rights Reserved.
+
+  </p>
+  </div> 
+</footer>
+
+ 
+  <script type='text/javascript' src='./media/js/jquery.prettyPhoto-3.4.2.js'></script>
+<script type='text/javascript' src='./media/js/themify.script-3.4.2.js'></script>
+
+     </body>
+ </html>
+
+

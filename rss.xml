@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title><![CDATA[{{ site.meta.site_title }}]]></title>
+        <link >{{ site.meta.absolute_baseurl }}</link>
+        <description><![CDATA[{{ site.meta.site_content}} ]]></description>
+        <managingEditor>{{ site.meta.author.email }} ({{ site.meta.author.full_name }})</managingEditor>
+        <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+        <language>{{ site.meta.site_language }}</language>
+        <generator> {{ site.meta.absolute_baseurl}}</generator>
+        {% for post in site.posts %}
+        <item>
+            <title><![CDATA[{{ post.title }} ]]></title>
+            <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+            <description><![CDATA[{{ post.content }} ]]></description>
+            <link>{{ site.meta.absolute_baseurl }}{{ post.url }}/index.html</link>
+            <guid>{{ site.meta.absolute_baseurl }}{{ post.url }}/index.html</guid>
+            <author>{{post.author}}</author>
+        </item>
+
+        {% endfor %}
+    </channel>
+</rss>

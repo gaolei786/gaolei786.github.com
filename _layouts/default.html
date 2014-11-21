@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+      {{ page.title }}
+    </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+    queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://
+    -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      </script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js">
+      </script>
+    <![endif]-->
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+  
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/index.html">
+            Gaolei's Blog
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/archives.html">
+                归 档
+              </a>
+            </li>
+            <li>
+              <a href="/categories.html">
+                分 类
+              </a>
+            </li>
+            <li>
+              <a href="/resume/index.html">
+                关 于
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+          {{ content }}
+        </div>
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+          <!-- Blog Search Well -->
+          <div class="well">
+            <h4>
+              站内搜索
+            </h4>
+            <form action="https://www.google.com/search" method="get">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control">
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input type="hidden" name="sitesearch" value="gaolei786.github.io" />
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search">
+                    </span>
+                  </button>
+                </span>
+              </div>
+            </form>
+            <!-- /.input-group -->
+          </div>
+          <!-- Blog Categories Well -->
+          <div class="well">
+            <h4>
+              分 类
+            </h4>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/categories.html#r">
+                      R语言
+                    </a>
+                  </li>
+ 
+                  <li>
+                    <a href="/categories.html#risk and actuary">
+                      风险管理与精算学
+                    </a>
+                  </li>
+				                    <li>
+                    <a href="/categories.html#随笔">
+                      随笔
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <ul class="list-unstyled">
+                                  <li>
+                    <a href="/categories.html#statistics">
+                      统计学
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/categories.html#latex">
+                      Latex
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/categories.html#other">
+                      其它
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- Blog Links Well -->
+          <div class="well">
+            <h4>
+              相关链接
+            </h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/winfirm">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="http://t.qq.com/allthelucky">
+                  Tblog
+                </a>
+              </li>
+              <li>
+                <a href="http://my.oschina.net/winfirm/">
+                  OSChina
+                </a>
+              </li>
+              <li>
+                <a href=" http://blog.chinaunix.net/uid/22985736.html">
+                  Cublog
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Side Widget Well -->
+
+        </div>
+      </div>
+      <!-- /.row -->
+      <hr>
+      <!-- Footer -->
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p align="center">
+              Copyright &copy; gaolei786.github.com 2014, powered by Jekyll and GitPaes, 
+              <a href="https://github.com/gaolei786/gaolei786.github.com">
+                fork
+              </a> to get the source, or vist my <a href="https://github.com/gaolei786">
+                  GitHub
+                </a>.
+				<br/>
+				<font size=2px><script src="http://s22.cnzz.com/stat.php?id=5868355&web_id=5868355" language="JavaScript"></script></font>
+            </p>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js">
+    </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js">
+    </script>
+  </body>
+
+</html>

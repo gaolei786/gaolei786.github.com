@@ -1,0 +1,25 @@
+markdown: kramdown
+permalink: /:categories/:title.html
+url: 
+lsi: false
+pygments: true
+safe: true
+auto: false 
+
+paginate: 10
+paginate_path: "page:num"
+
+# presonal config
+title: Steven Pan's Blog
+description: Steven Pan's Blog, powered by Jekyll...
+feed: http://www.winfirm.cn/atom.xml
+
+author: Steven Pan
+
+seo: 
+  keyword: 
+  description: 
+config:
+  js_dir:
+  img_dir:
+  css_dir:

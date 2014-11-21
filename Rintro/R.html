@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<meta charset="UTF-8">
+  <head>
+    <title>Presentation</title>
+
+	<meta name="generator" content="R package animation 2.2">
+	<title>Animations Using the R Language</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/scianimator.css" />
+	<link rel="stylesheet" href="css/shCore.css" />
+	<link rel="stylesheet" href="css/shThemeDefault.css" />
+
+	<script src="js/jquery-1.4.4.min.js"></script>
+	<script src="js/jquery.scianimator.min.js"></script>
+	<script src="js/shCore.js"></script>
+	<script src="js/shAutoloader.js"></script>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular '>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+
+		<article>
+		<br>
+		<br>
+       	<img class='centered' style='height: 500px' src='./11.png'>
+		</article>
+				<article>
+		<br>
+		<br>
+       	<img class='centered' style='height: 500px' src='./12.png'>
+		</article>
+		
+      <article>
+        <h1>
+        An Introduction to R
+        </h1>
+        <p>
+          高磊
+          <br>
+          2013/09/24
+        </p>
+      </article>
+	     <article>
+        <h3>
+         R与SAS、SPSS、...
+        </h3>
+		<hr>
+		<br>
+		<br>
+       	<img class='centered' style='height: 320px' src='./2.png'>
+		&nbsp &nbsp &nbsp &nbsp &nbspR &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                    SAS,SPSS...
+      </article>
+	  
+       <article>
+        <h3>
+         R？Wiki!
+        </h3>
+        <iframe src='http://en.wikipedia.org/wiki/R_(programming_language)'></iframe>
+      </article>
+	         <article>
+        <h3>
+         R package
+        </h3>
+        <iframe src='http://ftp.ctex.org/mirrors/CRAN/'></iframe>
+      </article>
+	  	         <article>
+        <h3>
+         R Gallary
+        </h3>
+        <iframe src='http://www.sr.bham.ac.uk/~ajrs/R/r-gallery.html'></iframe>
+      </article>
+	  
+	  
+  
+    
+
+      <article>
+        <h3>
+         R官方网站（http://www.r-project.org/）
+        </h3>
+        <iframe src='http://www.r-project.org/'></iframe>
+      </article>
+	  
+	  
+	   <article>
+
+        <h3>
+         R安装
+        </h3>
+        <iframe src='http://ftp.ctex.org/mirrors/CRAN/'></iframe>
+      </article>
+	  
+	  	   <article>
+
+        <h3>
+         R界面
+        </h3>
+		<hr>
+	<img class='centered' style='height: 450px' src='./1.png'>
+      </article>
+	  <article>
+	  <h3>
+	  Example1---Student Dataset
+	  </h3>
+	  <hr>
+	          <ul>
+          <li>
+            你的性别是？
+          </li>
+          <li>
+            你的身高？
+          </li>
+          <li>
+            在1-10之间随机选择一个整数？
+          </li>
+		  <li>
+		  昨晚几点睡觉？
+		  </li>
+		  <li>
+		  今早几点起床？
+		  <li>
+		  最近一次理发花了多少钱？
+		  </li>
+		  <li>
+		  晚餐喝水、饮料还是牛奶？
+		  </li>
+		  <li>
+		  有多少张光碟？
+		  </li>
+		  ......
+        </ul>
+		</article>
+		
+		<article>
+		<h3>
+		读取数据
+		</h3>
+		<hr>
+		<pre><code>
+studentdata <- read.table("studentdata.txt", sep = "\t", 
+                          header = TRUE)
+data(studentdata)
+head(studentdata)
+		</code></pre>
+		<p>输出：</p>
+				<pre><code>
+  Student Height Gender Shoes Number Dvds ToSleep WakeUp Haircut  Job Drink
+1       1     67 female    10      5   10    -2.5    5.5      60 30.0 water
+2       2     64 female    20      7    5     1.5    8.0       0 20.0   pop
+3       3     61 female    12      2    6    -1.5    7.5      48  0.0  milk
+4       4     61 female     3      6   40     2.0    8.5      10  0.0 water
+5       5     70   male     4      5    6     0.0    9.0      15 17.5   pop
+6       6     63 female    NA      3    5     1.0    8.5      25  0.0 water
+</code></pre> 
+		
+		</article>
+		<article>
+		<h3>
+		table()
+		</h3>
+		<hr>
+		<pre><code>
+#studentdata$Height
+attach(studentdata)
+table(Drink)
+		</pre></code>
+		输出：
+		<pre><code>
+Drink
+ milk   pop water 
+  113   178   355 
+		</code></pre>
+		</article>
+		<article>
+		<h3>
+		table()
+		</h3>
+		<pre><code>
+table(Drink, Gender)
+		</code></pre>
+		输出：
+		<pre><code>
+       Gender
+Drink   female male
+  milk      63   50
+  pop      110   68
+  water    256   99
+		</code></pre>
+		</article>
+	  
+		<article>
+		<h3>
+		barplot()
+		</h3>
+		<hr>
+		<pre><code>
+barplot(table(Drink), xlab = "Drink", ylab = "Count")
+		</pre></code>
+		输出：
+	<img class='centered' style='height: 400px' src='./3.png'>
+		</article>	
+		<article >
+		<h3>
+		table()
+		</h3>
+		<hr>
+		<pre><code>
+table(Dvds)
+Dvds
+   0    1    2  2.5    3    4    5    6    7    8    9   10   11   12   13 
+  26   10   13    1   18    9   27   14   12   12    7   78    3   20    7 
+  14   15   16   17 17.5   18   20   21   22 22.5   23   24   25 27.5   28 
+   4   46    1    3    1    4   83    3    3    1    3    2   31    3    1 
+  29   30   31   33   35   36   37   40   41   42   45   46   48   50   52 
+   1   45    1    1   12    4    1   26    1    1    5    1    2   26    1 
+  53   55   60   62   65   67   70   73   75   80   83   85   90   97  100 
+   2    1    7    1    2    1    4    1    3    4    1    1    1    1   10 
+ 120  122  130  137  150  152  157  175  200  250  500  900 1000 
+   2    1    2    1    6    1    1    1    8    1    1    1    1 
+		</code></pre>
+		</article>
+		<article>
+		<h3>
+		barplot()
+		</h3>
+		<hr>
+		<pre><code>
+barplot(table(Dvds))
+		</code></pre>
+		<img class='centered' style='height: 350px' src='./7.png'>
+		</article>
+
+		
+
+
+		
+
+		<article>
+		<h3>
+		分析数据：不同水平比较
+		</h3>
+		<hr>
+		<pre><code>
+> female.Haircut <- Haircut[Gender == "female"]
+> male.Haircut <- Haircut[Gender == "male"]
+> summary(female.Haircut)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00   15.00   25.00   34.08   45.00  180.00      19 
+> summary(male.Haircut)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00    0.00   12.00   10.54   15.00   75.00       1 
+		</code></pre>		
+		</article>
+		<article class = "smaller">
+		<h3>
+		boxplot(.~.)
+		</h3>
+		<hr>
+		<pre width = 123><code>
+m <- boxplot(Haircut ~ Gender)
+m$stats
+     [,1] [,2]
+[1,]    0    0
+[2,]   15    0
+[3,]   25   12
+[4,]   45   15
+[5,]   90   30
+		</code></pre>
+		<img class='centered' style='height: 200px width:400px' src='./8.png'>
+		</article>
+		<article>
+		<h3>
+		整理数据：构建新的变量
+		</h3>
+		<hr>
+		<pre><code>
+hours.of.sleep <- WakeUp - ToSleep
+summary(hours.of.sleep)
+#   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+#  2.500   6.500   7.500   7.385   8.500  12.500       4 
+hist(hours.of.sleep, main = "")
+		</code></pre>
+		输出：
+		<img class='centered' style='height: 350px' src='./4.png'>
+		</article>
+		<article>
+		<h3>
+		plot():散点图
+		</h3>
+		<hr>
+		<pre><code>
+par(mfrow = c(1, 2))
+plot(ToSleep, hours.of.sleep)
+points(-0.5, 8, pch = 4, col = 2, cex = 2)
+plot(jitter(ToSleep), jitter(hours.of.sleep))
+		</code></pre>
+		<img class='centered' style='height: 350px' src='./5.png'>
+		</article>
+		<article class = 'smaller'>
+		<h3>
+		lm():回归模型
+		</h3>
+		<hr>
+		<pre><code>
+> fit <- lm(hours.of.sleep ~ ToSleep)
+> fit
+Call:
+lm(formula = hours.of.sleep ~ ToSleep)
+Coefficients:
+(Intercept)      ToSleep  
+     7.9628      -0.5753  
+> abline(fit)
+		</code></pre>
+		<img class='centered' style='height: 350px' src='./6.png'>
+		</article>
+		<article>
+		<h3>
+		predict():预测
+		</h3>
+		<hr>
+		<pre><code>
+predict(fit, data.frame(ToSleep = c(-2)))
+       1 
+9.113329 
+points(-2, predict(fit, data.frame(ToSleep = c(-2))), cex = 2,
+       col = 2, pch = 16)
+	   </code></pre>
+		<img class='centered' style='height: 350px' src='./9.png'>
+		</article>
+		<article>
+		<h3>
+		Example2--正态总体均值的区间估计（方差未知）
+		</h3>
+		<hr>
+		<br />
+		<br />
+
+		<img class='centered' style='width: 580px ' src='./10.png'>
+		</article>
+		<article>
+		<h3>
+		区间估计函数
+		</h3>
+		<hr>
+		<pre><code>
+set.seed(123)
+norm.conf.interval <- function(i)
+{
+  y <- rnorm(16, 5, 1)
+  n <- length(y)
+  z=qt(0.975, n - 1)
+  u <- mean(y)
+  s <- sd(y)
+  ci <- c(u - s * z / n^0.5, u + s * z / n^0.5, (u-u0)/(s/n^0.5))
+}
+ci <- sapply(1:200, norm.conf.interval)
+		</code></pre>
+		</article>
+		
+		
+		
+		
+		
+		
+		<article>
+		<h3>
+		动态示意
+		</h3>
+		<hr>
+			<div class="scianimator"><div id="brownian_motion_b" style="display: inline-block;"></div></div>
+	<div class="scianimator" style="width: 480px;"></div>
+	<script src="js/brownian_motion_b.js"></script>
+<!-- highlight R code -->
+<script type="text/javascript">
+	SyntaxHighlighter.autoloader(
+	  "r    js/shBrushR.js"
+	);
+	SyntaxHighlighter.defaults["toolbar"] = false;
+	SyntaxHighlighter.all();
+</script>
+		</article>
+		<article>
+		<h3>
+		正直的统计学网站--统计之都论坛
+		</h3>
+		<iframe  src='http://cos.name/cn' width="200px" height="100px"></iframe>
+		</article>
+		
+		
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+     
+      <article>
+        <h1>
+          Thank you!
+        </h1>
+        
+        
+      </article>
+
+    </section>
+
+  </body>
+</html>

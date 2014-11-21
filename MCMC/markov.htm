@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://setosa.io/markov/random-sequence.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}ng\:form{display:block;}</style>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <title>Markov Chains</title>
+    <link href="./markov_files/css" rel="stylesheet" type="text/css">
+    <link href="./markov_files/style.css" type="text/css" rel="stylesheet">
+    <script src="./markov_files/d3.min.js"></script>
+    <script src="./markov_files/vector.js"></script>
+    <script src="./markov_files/angular.min.js" charset="utf-8"></script>
+    <style>
+</style>
+</head>
+<body ng-app="myApp" ng-controller="MainCtrl" class="ng-scope">
+  <div class="sequence" style="line-height: 596px;">
+  <span style="position: absolute; color: rgb(31, 119, 180); opacity: 0; left: 13.182666666666663%;">R</span>
+  <span style="position: absolute; color: rgb(31, 119, 180); opacity: 0; left: 17.839999999999996%;">R
+  </span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0; left: 22.571999999999996%;">R
+  </span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0; left: 27.233999999999995%;">R</span><span style="position: absolute; color: rgb(255, 127, 14); opacity: 0; left: 31.89133333333333%;">S</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 36.54866666666666%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 41.21066666666666%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 43.53933333333333%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 45.868%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 48.19666666666667%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 50.6%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 52.92866666666667%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 55.262%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 57.590666666666664%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 59.919333333333334%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 62.248000000000005%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 64.57666666666667%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 66.91%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 69.30866666666667%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 71.642%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 73.97066666666666%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 76.29933333333334%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 1; left: 78.628%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0.721734273; left: 82.78265727%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0.2714684218749999; left: 87.28531578125%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0.06304479200000002; left: 89.36955208%;">R</span><span style="position: absolute; color: rgb(31, 119, 180); opacity: 0.003274759125; left: 89.96725240875%;">R</span></div>
+
+<script>
+
+var myApp = angular.module('myApp', []);
+
+myApp.controller('MainCtrl', function($scope, utils, $window, $interval) {
+  angular.element($window).on('resize', function() { $scope.$apply(); });
+  var c = 0;
+  var s = ['R', 'S'];
+  var t = [ [0.9, 0.2], [0.2, 0.9] ];
+  var color = d3.scale.category10();
+  $interval(function() {
+    c = utils.sample(t[c]);
+    $scope.$broadcast('stateChange', { text: s[c], color: color(s[c]) });
+  }, 500);
+
+});
+
+
+</script>
+<script src="./markov_files/common.js" charset="utf-8"></script>
+
+</body></html>

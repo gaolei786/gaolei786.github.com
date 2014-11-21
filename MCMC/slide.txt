@@ -1,0 +1,51 @@
+% MCMC初步
+% 高磊
+% 2014/11/20
+
+# <font color=red>MC</font><font color=blue>MC<font>之MC
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+------------------
+
+![picture of spaghetti](images/spaghetti.jpg)
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+------------------
+
+![picture of spaghetti](images/spaghetti.jpg)
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+
+
+

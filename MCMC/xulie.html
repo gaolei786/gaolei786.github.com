@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <title>Markov Chains</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://setosa.io/markov/style.css" type="text/css" rel="stylesheet">
+    <script src="http://setosa.io/markov/js/d3.min.js"></script>
+    <script src="http://setosa.io/markov/vector.js"></script>
+    <script src="http://setosa.io/markov/angular.min.js" charset="utf-8"></script>
+    <style>
+</style>
+</head>
+
+<body ng-app="myApp" ng-controller="MainCtrl">
+  <div class="sequence"></div>
+</body>
+<script>
+
+var myApp = angular.module('myApp', []);
+
+myApp.controller('MainCtrl', function($scope, utils, $window, $interval) {
+  angular.element($window).on('resize', function() { $scope.$apply(); });
+  var c = 0;
+  var s = ['R', 'S'];
+  var t = [ [0.9, 0.2], [0.2, 0.9] ];
+  var color = d3.scale.category10();
+  $interval(function() {
+    c = utils.sample(t[c]);
+    $scope.$broadcast('stateChange', { text: s[c], color: color(s[c]) });
+  }, 500);
+
+});
+
+
+</script>
+<script src="http://setosa.io/markov/common.js" charset="utf-8"></script>
+</html>

@@ -1,0 +1,15 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset>
+    {% for post in site.posts %}
+    <url>
+        <loc>{{site.meta.absolute_baseurl}}{{post.url}}</loc>
+        <lastmod>{{ post.date | date:"%Y-%m-%d" }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+    {% endfor %}
+</urlset>
+
