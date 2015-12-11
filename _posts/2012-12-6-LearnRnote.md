@@ -499,7 +499,18 @@ split(all$of, all$Prod) <- r  ##少见！
 
 
 
+27.图形上加公式
 
+<pre><code>
+for(i in 7:1){
+  text(-0.3, i-0.5, bquote(alpha[.(7-i)]))
+}
+
+for(j in 1:7){
+  text(j-0.5, 7.5, bquote(beta[.(j-1)]))
+}
+</code></pre>
+![](https://gaolei786.github.io/images/4.png)
 
 
 
