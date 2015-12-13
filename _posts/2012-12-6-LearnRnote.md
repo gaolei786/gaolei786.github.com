@@ -513,6 +513,24 @@ for(j in 1:7){
 ![](https://gaolei786.github.io/images/4.png)
 
 
+28.plot公式里双下标之间的逗号
+<pre><code>
+plot(0:3, 0:3, type = 'n', axes = F, 
+     xlab = '', ylab = '')
+for(i in 0:3){
+  segments(i, 0, i, 3)
+  segments(0, i, 3, i)
+}
+text(1.5, 1.5, expression(phi['i,j']), cex = 2)
+text(1.5, 2.5, expression(phi['i-1,j']), cex = 2)
+text(1.5, 0.5, expression(phi['i+1,j']), cex = 2)
+text(0.5, 1.5, expression(phi['i,j-1']), cex = 2)
+text(2.5, 1.5, expression(phi['i,j+1']), cex = 2)
+polygon(c(1, 1, 2, 2),c(1, 2, 2, 1), col = rgb(0, 0, 0, 0.2))
+</code></pre>
+![](https://gaolei786.github.io/images/kongjianshiyi.png)
+
+
 
 
 

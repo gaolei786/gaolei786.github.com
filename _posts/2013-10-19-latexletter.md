@@ -89,4 +89,10 @@ m2
 
 ![](https://gaolei786.github.com/images/shuxin.png)
 
+1.连加求和符号下方的脚注
+<pre><code>
+$\bar{\phi}_{i,j}=\frac{\sum \limits_{\phi_{i',j'}\in \partial_{i,j}} \phi_{i',j'}}{n_{i,j}}$ \\
+</code></pre>
+![](https://gaolei786.github.com/images/lianjia.png)
+
 
