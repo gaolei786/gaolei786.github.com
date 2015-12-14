@@ -96,3 +96,10 @@ $\bar{\phi}_{i,j}=\frac{\sum \limits_{\phi_{i',j'}\in \partial_{i,j}} \phi_{i',j
 ![](https://gaolei786.github.com/images/lianjia.png)
 
 
+2.latex 幻灯片脚注栏图标、作者、页码的自定义方式[自定义方式](https://joerglenhard.wordpress.com/2011/08/04/beamer-customization-ii-footline-with-multiple-lines/)
+
+![](https://gaolei786.github.com/images/footline2.png)
+
+
+
+
