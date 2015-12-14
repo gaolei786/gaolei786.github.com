@@ -100,6 +100,13 @@ $\bar{\phi}_{i,j}=\frac{\sum \limits_{\phi_{i',j'}\in \partial_{i,j}} \phi_{i',j
 
 ![](https://gaolei786.github.com/images/footline2.png)
 
+3.latex 公式中有中文：
+<pre><code>
+$\mbox{期望最终赔款}=\mbox{期望最终赔付率} \times \mbox{已赚保费}$
+</code></pre>
+![](https://gaolei786.github.com/images/latexzhongwen.png)
+
+
 
 
 
