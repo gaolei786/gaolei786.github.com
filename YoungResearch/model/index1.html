@@ -1,0 +1,64 @@
+<pre>
+剔除银行后模型变量、参数和均衡条件情况：
+//*****************内生变量定义***********************************
+var
+Lg Lb Kg Kb Ig Ib Yg Yb 
+wg wb  Qg Qb pg pb
+C M L Y Z mu e X  D R 
+
+;
+
+//*****************外生变量定义***********************************
+varexo
+taue   A
+;
+//*****************参数定义******************************
+parameters
+beta eta xi omegabar rhoL alphab alphag deltag deltab 
+phig phib rhoA sigmaA
+theta1 theta2 d0 d1 d2 deltaX epsilon
+erow rhoY paib
+kappa gamma zeta psi sbarg
+Lgss1 Lbss1 Kgss1 Kbss1 Igss1 Ibss1 Ygss1 Ybss1 
+wgss1 wbss1  Qgss1 Qbss1 pgss1 pbss1
+Css1 Mss1 Lss1 Yss1 Zss1 muss1 ess1 Xss1  Dss1 Rss1 
+
+Lgss2 Lbss2 Kgss2 Kbss2 Igss2 Ibss2 Ygss2 Ybss2  
+wgss2 wbss2  Qgss2 Qbss2 pgss2 pbss2
+Css2 Mss2 Lss2 Yss2 Zss2 muss2 ess2 Xss2 Dss2 Rss2 
+ 
+;
+//************************模型******************
+
+
+
+model;
+L = (Lb^(1+rhoL)+Lg^(1+rhoL))^(1/(1+rhoL)); //equation1
+M = beta*(C-omegabar*L^(1+xi)/(1+xi))^(-eta)/(C(-1)-omegabar*L(-1)^(1+xi)/(1+xi))^(-eta);//equation2
+1=M(+1)*R;//equation3
+wg = omegabar*Lg^rhoL;//equation4
+wb = omegabar*Lb^rhoL;//equation5
+Y = (paib^(1/rhoY)*Yb^((rhoY-1)/rhoY)+(1-paib)^(1/rhoY)*Yg^((rhoY-1)/rhoY))^(rhoY/(rhoY-1));//equation18
+Yg = (1-d0-d1*X-d2*X^2)*A*Kg(-1)^alphag*Lg^(1-alphag);//equation19
+Yb = (1-d0-d1*X-d2*X^2)*A*Kb(-1)^alphab*Lb^(1-alphab);//equation20
+pb = (paib*Y/Yb)^(1/rhoY);//equation21
+pg = ((1-paib)*Y/Yg)^(1/rhoY);//equation22
+X = deltaX *X(-1)+e+erow;//equation23
+e=(1-mu)*Yb^epsilon;//equation24
+Z = theta1*mu^theta2*Yb;//equation25
+wb = (1-alphab)*Yb/Lb*(pb-theta1*mu^theta2-taue*(1-mu)*epsilon*Yb^(epsilon-1));//equation26
+taue = Yb^(1-epsilon)*theta1*theta2*mu^(theta2-1);//equation27
+//R = (alphab*Yb/Kb(-1)*(pb-theta1*mu^theta2-taue*(1-mu)*epsilon*Yb^(epsilon-1))+(1-deltab)*Qb)/Qb(-1);//equation28
+R(+1) = (alphab*Yb(+1)/Kb*(pb(+1)-theta1*mu(+1)^theta2-taue*(1-mu(+1))*epsilon*Yb(+1)^(epsilon-1))+(1-deltab)*Qb(+1))/Qb;
+wg = (1-alphag)*pg*Yg/Lg;//equation29
+//R = (alphag*pg*Yg/Kg(-1) + (1-deltag)*Qg)/Qg(-1);//equation30
+R(+1) = (alphag*pg(+1)*Yg(+1)/Kg + (1-deltag)*Qg(+1))/Qg;//equation30
+Qg = 1 + phig/2*(Ig/Ig(-1)-1)^2+phig*(Ig/Ig(-1)-1)*Ig/Ig(-1)-M(+1)*phig*(Ig(+1)/Ig-1)*(Ig(+1)/Ig)^2;//equation31
+Qb = 1 + phib/2*(Ib/Ib(-1)-1)^2+phib*(Ib/Ib(-1)-1)*Ib/Ib(-1)-M(+1)*phib*(Ib(+1)/Ib-1)*(Ib(+1)/Ib)^2;//equation32
+Kg = (1-deltag)*Kg(-1)+Ig;//equation33
+Kb = (1-deltab)*Kb(-1)+Ib;//equation34
+D=Qg*Kg+Qb*Kb;
+Y=C+Ig+Ib+Z+phig/2*(Ig/Ig(-1)-1)^2*Ig+phib/2*(Ib/Ib(-1)-1)^2*Ib;//equation37
+end;
+
+</pre>
