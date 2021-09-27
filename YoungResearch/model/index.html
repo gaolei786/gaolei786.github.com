@@ -1,0 +1,72 @@
+//*****************内生变量定义***********************************
+var
+Lg Lb Kg Kb Ig Ib Yg Yb Sg Sb 
+wg wb Rkg Rkb Qg Qb pg pb
+C M L Y Z mu e X N W sg D R 
+chig chib nu phi Gamma Omega
+;
+
+//*****************外生变量定义***********************************
+varexo
+taue taub taug  A
+;
+//*****************参数定义******************************
+parameters
+beta eta xi omegabar rhoL alphab alphag deltag deltab 
+phig phib rhoA sigmaA
+theta1 theta2 d0 d1 d2 deltaX epsilon
+erow rhoY paib
+kappa gamma zeta psi sbarg
+Lgss1 Lbss1 Kgss1 Kbss1 Igss1 Ibss1 Ygss1 Ybss1 Sgss1 Sbss1 
+wgss1 wbss1 Rkgss1 Rkbss1 Qgss1 Qbss1 pgss1 pbss1
+Css1 Mss1 Lss1 Yss1 Zss1 muss1 ess1 Xss1 Nss1 Wss1 sgss1 Dss1 Rss1 
+chigss1 chibss1 nuss1 phiss1 Gammass1 Omegass1 
+
+Lgss2 Lbss2 Kgss2 Kbss2 Igss2 Ibss2 Ygss2 Ybss2 Sgss2 Sbss2 
+wgss2 wbss2 Rkgss2 Rkbss2 Qgss2 Qbss2 pgss2 pbss2
+Css2 Mss2 Lss2 Yss2 Zss2 muss2 ess2 Xss2 Nss2 Wss2 sgss2 Dss2 Rss2 
+chigss2 chibss2 nuss2 phiss2 Gammass2 Omegass2 
+;
+
+model;
+L = (Lb^(1+rhoL)+Lg^(1+rhoL))^(1/(1+rhoL)); //equation1
+M = beta*(C-omegabar*L^(1+xi)/(1+xi))^(-eta)/(C(-1)-omegabar*L(-1)^(1+xi)/(1+xi))^(-eta);//equation2
+%M = beta*(C(+1)-omegabar*L(+1)^(1+xi)/(1+xi))^(-eta)/(C-omegabar*L^(1+xi)/(1+xi))^(-eta);//equation2
+1=M(+1)*R;//equation3
+wg = omegabar*Lg^rhoL;//equation4
+wb = omegabar*Lb^rhoL;//equation5
+W = Qb*Sb+Qg*Sg;//equation6
+sg = Qg*Sg/W;//equation7
+chib = Omega*(Rkb(+1)-(1+taub)*R);//equation8
+chig = Omega*((Rkg(+1)-Rkb(+1))-(taug-taub)*R);//equation9
+nu = Omega*R;//equation10
+Omega=M(+1)*(1-gamma+gamma*phi(+1));//equation11
+Gamma = chib + chig*sg - nu * psi/2*(sg - sbarg)^2;//equation12
+phi = kappa * nu /(kappa - Gamma );//equation13
+W = nu*N/(kappa-Gamma);//equation14
+sg = chig / nu / psi + sbarg;//equation15
+%N(+1) = gamma*(Rkg(+1)*Qg*Sg+Rkb(+1)*Qb*Sb-R*D)+zeta*(Qg*Sg+Qb*Sb);//equation16
+N = gamma*(Rkg*Qg(-1)*Sg(-1)+Rkb*Qb(-1)*Sb(-1)-R(-1)*D(-1))+zeta*(Qg(-1)*Sg(-1)+Qb(-1)*Sb(-1));//equation16
+D = (1+taub)*Qb*Sb+(1+taug)*Qg*Sg+psi/2*(sg-sbarg)^2*W-N;//equation17
+Y = (paib^(1/rhoY)*Yb^((rhoY-1)/rhoY)+(1-paib)^(1/rhoY)*Yg^((rhoY-1)/rhoY))^(rhoY/(rhoY-1));//equation18
+Yg = (1-d0-d1*X-d2*X^2)*A*Kg(-1)^alphag*Lg^(1-alphag);//equation19
+Yb = (1-d0-d1*X-d2*X^2)*A*Kb(-1)^alphab*Lb^(1-alphab);//equation20
+pb = (paib*Y/Yb)^(1/rhoY);//equation21
+pg = ((1-paib)*Y/Yg)^(1/rhoY);//equation22
+X = deltaX *X(-1)+e+erow;//equation23
+e=(1-mu)*Yb^epsilon;//equation24
+Z = theta1*mu^theta2*Yb;//equation25
+wb = (1-alphab)*Yb/Lb*(pb-theta1*mu^theta2-taue*(1-mu)*epsilon*Yb^(epsilon-1));//equation26
+taue = Yb^(1-epsilon)*theta1*theta2*mu^(theta2-1);//equation27
+Rkb = (alphab*Yb/Kb(-1)*(pb-theta1*mu^theta2-taue*(1-mu)*epsilon*Yb^(epsilon-1))+(1-deltab)*Qb)/Qb(-1);//equation28
+wg = (1-alphag)*pg*Yg/Lg;//equation29
+Rkg = (alphag*pg*Yg/Kg(-1) + (1-deltag)*Qg)/Qg(-1);//equation30
+Qg = 1 + phig/2*(Ig/Ig(-1)-1)^2+phig*(Ig/Ig(-1)-1)*Ig/Ig(-1)-M(+1)*phig*(Ig(+1)/Ig-1)*(Ig(+1)/Ig)^2;//equation31
+Qb = 1 + phib/2*(Ib/Ib(-1)-1)^2+phib*(Ib/Ib(-1)-1)*Ib/Ib(-1)-M(+1)*phib*(Ib(+1)/Ib-1)*(Ib(+1)/Ib)^2;//equation32
+Kg = (1-deltag)*Kg(-1)+Ig;//equation33
+Kb = (1-deltab)*Kb(-1)+Ib;//equation34
+Qg*Sg=Qg*Kg;//equation35
+Qb*Sb=Qb*Kb;//equation36
+Y=C+Ig+Ib+Z+phig/2*(Ig/Ig(-1)-1)^2*Ig+phib/2*(Ib/Ib(-1)-1)^2*Ib+psi/2*(sg-sbarg)^2*W;//equation37
+
+end;
