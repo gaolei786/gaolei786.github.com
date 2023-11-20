@@ -1,0 +1,338 @@
+! This file was created by program GtapAgg.
+! If you edit it directly, please observe the following rules:
+!   The file has 6 sections:
+!     A section marker is a line that starts with "=".
+!     Each section begins AND ends with its own section markers.
+!     Hence the file must contain 12 section marker lines.
+!     Blank lines are ignored.
+!     Lines starting with "!" are ignored.
+!
+!   Below, "sector" refers to "tradeable commodity"
+!      and "factor" refers to "endowment commodity".
+!
+!   Section 1 lists new (aggregated) sectors.
+!   Each line consists of:
+!             (a) name of new sector (max 12 letters)
+!             (b) an ampersand "&"
+! optionally, (c) description of new sector (max 30 letters)
+!   You may have to add or delete lines in Section 1
+!
+!   Section 2 lists original (disaggregated) sectors.
+!   Each line consists of:
+!             (a) name of old sector (max 12 letters)
+! optionally, (b) space or comma followed by description of new
+!                     sector (max 30 letters)
+!             (c) an ampersand "&"
+!             (d) matching new sector (must be one of the short
+!                     names mentioned in Section 1
+!   You are not expected to add or delete lines in Section 2,
+!        or to alter the stuff BEFORE the "&" on each line
+!
+! Sections 3 and 4 specify the regional aggregation.
+! They follow the same pattern as Sections 1 and 2.
+!
+! Sections 5 and 6 specify the factor (endowment) aggregation.
+! They follow a similar pattern to Sections 1 and 2.
+! However see notes preceding Section 5.
+!
+!
+! Section 1
+! One line for each new sector
+= = = = = =
+Crops        & Crops
+Othr_Agr     & Other agriculture
+Coal         & Coal
+Oil          & Extraction of crude petroleum
+Gas          & Extraction of natural gas
+Mines        & Other mining extraction
+Food         & Processed food bev and tobacco
+L_mfg        & Light maufacturing
+Oil_pcts     & Petroleum
+Chem_Fert    & Chemical products inc fertlize
+Int_mfg      & Intermediate manufacturing
+Cement       & Cement
+I_steel      & Iron and steel
+Aluminum     & Nonferrous metals incl. alumin
+Othr_mfg     & Other manufacturing
+Electricity  & Electricity
+Gas_dist     & Gas manufacture and distributi
+Const        & 
+O_tp         & Other transport Land and pipel
+W_tp         & Water transport
+A_tp         & Air transport
+Othr_svc     & 
+= = = = = =
+!
+! Section 2
+! One line for each old sector
+! Old sector at left, corresponding new sector on right
+= = = = = =
+pdr            Paddy rice                      & Crops
+wht            Wheat                           & Crops
+gro            Cereal grains nec               & Crops
+v_f            Vegetables, fruit, nuts         & Crops
+osd            Oil seeds                       & Crops
+c_b            Sugar cane, sugar beet          & Crops
+pfb            Plant-based fibers              & Crops
+ocr            Crops nec                       & Crops
+ctl            Bovine cattle, sheep and goats  & Othr_Agr
+oap            Animal products nec             & Othr_Agr
+rmk            Raw milk                        & Othr_Agr
+wol            Wool, silk-worm cocoons         & Othr_Agr
+frs            Forestry                        & Othr_Agr
+fsh            Fishing                         & Othr_Agr
+coa            Coal                            & Coal
+oil            Oil                             & Oil
+gas            Gas                             & Gas
+oxt            Minerals nec                    & Mines
+cmt            Bovine meat products            & Food
+omt            Meat products nec               & Food
+vol            Vegetable oils and fats         & Food
+mil            Dairy products                  & Food
+pcr            Processed rice                  & Food
+sgr            Sugar                           & Food
+ofd            Food products nec               & Food
+b_t            Beverages and tobacco products  & Food
+tex            Textiles                        & L_mfg
+wap            Wearing apparel                 & L_mfg
+lea            Leather products                & L_mfg
+lum            Wood products                   & L_mfg
+ppp            Paper products, publishing      & L_mfg
+p_c            Petroleum, coal products        & Oil_pcts
+chm            Chemical products               & Chem_Fert
+bph            Basic pharmaceutical products   & Int_mfg
+rpp            Rubber and plastic products     & Int_mfg
+nmm            Mineral products nec            & Cement
+i_s            Ferrous metals                  & I_steel
+nfm            Metals nec                      & Aluminum
+fmp            Metal products                  & Int_mfg
+ele            Computer, electronic and optic  & Othr_mfg
+eeq            Electrical equipment            & Othr_mfg
+ome            Machinery and equipment nec     & Othr_mfg
+mvh            Motor vehicles and parts        & Othr_mfg
+otn            Transport equipment nec         & Othr_mfg
+omf            Manufactures nec                & Othr_mfg
+ely            Electricity                     & Electricity
+gdt            Gas manufacture, distribution   & Gas_dist
+wtr            Water                           & Othr_svc
+cns            Construction                    & Const
+trd            Trade                           & Othr_svc
+afs            Accommodation, Food and servic  & Othr_svc
+otp            Transport nec                   & O_tp
+wtp            Water transport                 & W_tp
+atp            Air transport                   & A_tp
+whs            Warehousing and support activi  & Othr_svc
+cmn            Communication                   & Othr_svc
+ofi            Financial services nec          & Othr_svc
+ins            Insurance                       & Othr_svc
+rsa            Real estate activities          & Othr_svc
+obs            Business services nec           & Othr_svc
+ros            Recreational and other service  & Othr_svc
+osg            Public Administration and defe  & Othr_svc
+edu            Education                       & Othr_svc
+hht            Human health and social work a  & Othr_svc
+dwe            Dwellings                       & Othr_svc
+= = = = = =
+!
+! Section 3
+! One line for each new region
+= = = = = =
+USA2         & United States and Puerto Rico
+Can2         & Canada
+EU_27        & European Union 27
+Othr_Europe  & Other Europe
+Japan        & Japan
+Other_H_Asia & Other high-income Asia
+China        & China
+India        & India
+SACU         & South African Customs Union
+Mex          & Mexico
+Brazil       & Brazil
+Indo         & Indonesia
+Russ         & Russian federation
+Othr_Afr     & Other Africa
+M_east       & Middle east oil exporters
+Othr_Amer    & Lat Amer_Cent Amer_
+Othr_S_Asia  & Other South Asia
+Othr_SE_Asia & Other Southeast Asia
+W_Asia       & West Asia
+= = = = = =
+!
+! Section 4
+! One line for each old region
+! Old region at left, corresponding new region on right
+= = = = = =
+aus            Australia                       & Other_H_Asia
+nzl            New Zealand                     & Other_H_Asia
+xoc            Rest of Oceania                 & Other_H_Asia
+chn            China                           & China
+hkg            Hong Kong                       & China
+jpn            Japan                           & Japan
+kor            Korea                           & Other_H_Asia
+mng            Mongolia                        & Othr_SE_Asia
+twn            Taiwan                          & China
+xea            Rest of East Asia               & Othr_SE_Asia
+brn            Brunei Darussalam               & Othr_SE_Asia
+khm            Cambodia                        & Othr_SE_Asia
+idn            Indonesia                       & Indo
+lao            Lao People's Democratic Republ  & Othr_SE_Asia
+mys            Malaysia                        & Othr_SE_Asia
+phl            Philippines                     & Othr_SE_Asia
+sgp            Singapore                       & Othr_SE_Asia
+tha            Thailand                        & Othr_SE_Asia
+vnm            Viet Nam                        & Othr_SE_Asia
+xse            Rest of Southeast Asia          & Othr_SE_Asia
+bgd            Bangladesh                      & Othr_S_Asia
+ind            India                           & India
+npl            Nepal                           & Othr_S_Asia
+pak            Pakistan                        & Othr_S_Asia
+lka            Sri Lanka                       & Othr_S_Asia
+xsa            Rest of South Asia              & Othr_S_Asia
+can            Canada                          & Can2
+usa            United States of America        & USA2
+mex            Mexico                          & Mex
+xna            Rest of North America           & Othr_Amer
+arg            Argentina                       & Othr_Amer
+bol            Bolivia                         & Othr_Amer
+bra            Brazil                          & Brazil
+chl            Chile                           & Othr_Amer
+col            Colombia                        & Othr_Amer
+ecu            Ecuador                         & Othr_Amer
+pry            Paraguay                        & Othr_Amer
+per            Peru                            & Othr_Amer
+ury            Uruguay                         & Othr_Amer
+ven            Venezuela                       & Othr_Amer
+xsm            Rest of South America           & Othr_Amer
+cri            Costa Rica                      & Othr_Amer
+gtm            Guatemala                       & Othr_Amer
+hnd            Honduras                        & Othr_Amer
+nic            Nicaragua                       & Othr_Amer
+pan            Panama                          & Othr_Amer
+slv            El Salvador                     & Othr_Amer
+xca            Rest of Central America         & Othr_Amer
+dom            Dominican Republic              & Othr_Amer
+jam            Jamaica                         & Othr_Amer
+pri            Puerto Rico                     & USA2
+tto            Trinidad and Tobago             & Othr_Amer
+xcb            Caribbean                       & Othr_Amer
+aut            Austria                         & EU_27
+bel            Belgium                         & EU_27
+bgr            Bulgaria                        & EU_27
+hrv            Croatia                         & EU_27
+cyp            Cyprus                          & EU_27
+cze            Czech Republic                  & EU_27
+dnk            Denmark                         & EU_27
+est            Estonia                         & EU_27
+fin            Finland                         & EU_27
+fra            France                          & EU_27
+deu            Germany                         & EU_27
+grc            Greece                          & EU_27
+hun            Hungary                         & EU_27
+irl            Ireland                         & EU_27
+ita            Italy                           & EU_27
+lva            Latvia                          & EU_27
+ltu            Lithuania                       & EU_27
+lux            Luxembourg                      & EU_27
+mlt            Malta                           & EU_27
+nld            Netherlands                     & EU_27
+pol            Poland                          & EU_27
+prt            Portugal                        & EU_27
+rou            Romania                         & EU_27
+svk            Slovakia                        & EU_27
+svn            Slovenia                        & EU_27
+esp            Spain                           & EU_27
+swe            Sweden                          & EU_27
+gbr            United Kingdom                  & Othr_Europe
+che            Switzerland                     & Othr_Europe
+nor            Norway                          & Othr_Europe
+xef            Rest of EFTA                    & Othr_Europe
+alb            Albania                         & Othr_Europe
+blr            Belarus                         & Othr_Europe
+rus            Russian Federation              & Russ
+ukr            Ukraine                         & Othr_Europe
+xee            Rest of Eastern Europe          & W_Asia
+xer            Rest of Europe                  & W_Asia
+kaz            Kazakhstan                      & W_Asia
+kgz            Kyrgyzstan                      & W_Asia
+tjk            Tajikistan                      & W_Asia
+xsu            Rest of Former Soviet Union     & W_Asia
+arm            Armenia                         & W_Asia
+aze            Azerbaijan                      & W_Asia
+geo            Georgia                         & W_Asia
+bhr            Bahrain                         & M_east
+irn            Iran Islamic Republic of        & W_Asia
+isr            Israel                          & W_Asia
+jor            Jordan                          & W_Asia
+kwt            Kuwait                          & M_east
+omn            Oman                            & M_east
+qat            Qatar                           & M_east
+sau            Saudi Arabia                    & M_east
+tur            Turkey                          & W_Asia
+are            United Arab Emirates            & M_east
+xws            Rest of Western Asia            & W_Asia
+egy            Egypt                           & Othr_Afr
+mar            Morocco                         & Othr_Afr
+tun            Tunisia                         & Othr_Afr
+xnf            Rest of North Africa            & Othr_Afr
+ben            Benin                           & Othr_Afr
+bfa            Burkina Faso                    & Othr_Afr
+cmr            Cameroon                        & Othr_Afr
+civ            Cote d'Ivoire                   & Othr_Afr
+gha            Ghana                           & Othr_Afr
+gin            Guinea                          & Othr_Afr
+nga            Nigeria                         & Othr_Afr
+sen            Senegal                         & Othr_Afr
+tgo            Togo                            & Othr_Afr
+xwf            Rest of Western Africa          & Othr_Afr
+xcf            Central Africa                  & Othr_Afr
+xac            South Central Africa            & Othr_Afr
+eth            Ethiopia                        & Othr_Afr
+ken            Kenya                           & Othr_Afr
+mdg            Madagascar                      & Othr_Afr
+mwi            Malawi                          & Othr_Afr
+mus            Mauritius                       & Othr_Afr
+moz            Mozambique                      & Othr_Afr
+rwa            Rwanda                          & Othr_Afr
+tza            Tanzania                        & Othr_Afr
+uga            Uganda                          & Othr_Afr
+zmb            Zambia                          & Othr_Afr
+zwe            Zimbabwe                        & Othr_Afr
+xec            Rest of Eastern Africa          & Othr_Afr
+bwa            Botswana                        & SACU
+nam            Namibia                         & SACU
+zaf            South Africa                    & SACU
+xsc            Rest of South African Customs   & SACU
+xtw            Rest of the World               & Othr_Europe
+= = = = = =
+!
+! Section 5
+! One line for each new factor
+! Four fields separated by three ampersands (&)
+! (a) name of new factor (max 12 letters)
+! (b) an ampersand "&"
+! (c) either "sluggish" or "mobile"
+! (d) an ampersand "&"
+! (e) for sluggish ETRAE number <0, for mobile "---"
+! (f) an ampersand "&"
+! optionally, (g) description of new factor (max 30 letters)
+= = = = = =
+Land         & sluggish &-1.000000 & 
+UnSkLab      &   mobile &     --- & 
+SkLab        &   mobile &     --- & 
+Capital      &   mobile &     --- & 
+NatRes       & sluggish &-0.001000 & 
+= = = = = =
+!
+! Section 6
+! One line for each old factor
+! Old factor at left, corresponding new factor on right
+= = = = = =
+Land           Land                            & Land
+tech_aspros    Technicians/AssocProfessional   & SkLab
+clerks         Clerks                          & UnSkLab
+service_shop   Service/Shop workers            & UnSkLab
+off_mgr_pros   Officials and Managers          & SkLab
+ag_othlowsk    Agricultural and Unskilled      & UnSkLab
+Capital        Capital                         & Capital
+NatlRes        Natural Resources               & NatRes
+= = = = = =
