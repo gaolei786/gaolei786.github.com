@@ -1,0 +1,7 @@
+Shock tms("chem_fert","eu_27","china")=10.9550019103094;
+Shock tms("chem_fert","eu_27","india")=15.8841624858893;
+Shock tms("othr_mfg","eu_27","sacu")=3.42503523248008;
+Shock tms("i_steel","eu_27","mex")=8.47010759070869;
+Shock tms("othr_mfg","eu_27","indo")=1.29913922245188;
+Shock tms("othr_mfg","eu_27","othr_se_asia")=0.765336048047596;
+Shock tms("int_mfg","eu_27","russ")=8.93326776802095;
