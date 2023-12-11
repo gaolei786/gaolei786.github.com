@@ -1,0 +1,14 @@
+Shock rctaxb("usa2")=90;
+Shock rctaxb("can2")=90;
+Shock rctaxb("eu_27")=90;
+Shock rctaxb("othr_europe")=90;
+Shock rctaxb("japan")=90;
+Shock rctaxb("other_h_asia")=90;
+
+Shock rctaxb("china")=30;
+Shock rctaxb("india")=30;
+Shock rctaxb("sacu")=30;
+Shock rctaxb("mex")=30;
+Shock rctaxb("indo")=30;
+Shock rctaxb("othr_se_asia")=30;
+Shock rctaxb("russ")=30;
